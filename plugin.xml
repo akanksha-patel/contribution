@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.vogella.extensionpoint.definition.greeter">
+      <client
+            class="com.vogella.extensionpoint.contribution.GreeterGerman">
+      </client>
+   </extension>
+   
+    <extension
+         point="org.eclipse.ui.menus">
+         <menu
+               id="Evaluate extensions">
+            <command
+                  commandId="com.vogella.extensionpoint.definition.commands.globalCommand"
+                  defaultHandler="com.vogella.extensionpoint.definition.EvaluateContributionsHandler">
+            </command>
+            <handler
+            	  class="com.vogella.extensionpoint.definition.EvaluateContributionsHandler"
+            	commandId="com.vogella.extensionpoint.definition.commands.globalCommand">
+            </handler>
+         </menu>
+    
+   </extension>
+    <extension
+          id="product"
+          point="org.eclipse.core.runtime.products">
+       <product
+             application="org.eclipse.ant.core.antRunner">
+          <property
+                name="appName">
+          </property>
+       </product>
+    </extension>
+
+</plugin>
